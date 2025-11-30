@@ -1,3 +1,3 @@
-To access the website please copy and paste the following URL on a browser of your choice!
+To access the website please click on the following URL!
 
 https://akamariadis.github.io
