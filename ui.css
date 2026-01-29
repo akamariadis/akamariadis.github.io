@@ -162,7 +162,7 @@ h2 {
 }
 
 body {
-  background-image: url('background.jpg');
+  background-image: url('https://raw.githubusercontent.com/akamariadis/akamariadis.github.io/main/background.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
