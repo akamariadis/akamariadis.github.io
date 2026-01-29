@@ -177,3 +177,13 @@ button:hover {
 button {
   transition: all 0.3s ease;
 }
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+}
