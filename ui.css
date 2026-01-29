@@ -167,3 +167,13 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
+
+button:hover {
+  background-color: #2ea44f;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+button {
+  transition: all 0.3s ease;
+}
