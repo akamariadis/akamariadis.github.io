@@ -178,12 +178,24 @@ button {
   transition: all 0.3s ease;
 }
 
-@media (max-width: 600px) {
-  body {
-    font-size: 14px;
-  }
-  .container {
-    width: 100%;
-    padding: 10px;
-  }
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-bottom: 1px solid #ccc;
+}
+
+.uni-logo {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+.header-container h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
 }
