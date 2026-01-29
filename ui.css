@@ -160,3 +160,11 @@ h2 {
 .contact-links a:hover {
   color: #1d4ed8;
 }
+
+body {
+  background-image: url('assets/images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
