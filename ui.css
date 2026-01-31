@@ -1,14 +1,18 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
     color: #333;
+    background-color: #f4f4f4; 
     background-image: url('background.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-color: #f4f4f4;
 }
 
 .container {
@@ -31,6 +35,7 @@ body {
     font-size: 2.5rem;
     font-weight: 700;
     color: #222;
+    line-height: 1.2;
 }
 
 .tagline {
@@ -50,6 +55,7 @@ body {
     color: #555;
     font-size: 1.5rem;
     transition: all 0.2s ease;
+    padding: 5px; 
 }
 
 .social-link:hover {
@@ -60,7 +66,8 @@ body {
 .site-nav {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    flex-wrap: wrap; 
+    gap: 10px; 
     margin-bottom: 40px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 20px;
@@ -73,6 +80,7 @@ body {
     padding: 8px 16px;
     border-radius: 6px;
     transition: background-color 0.2s;
+    white-space: nowrap; 
 }
 
 .nav-link:hover {
@@ -95,7 +103,7 @@ body {
 
 .education-item {
     display: flex;
-    align-items: center;
+    align-items: center; 
     gap: 20px;
     background-color: #ffffff;
     border: 1px solid #eaeaea;
@@ -114,6 +122,7 @@ body {
     width: 60px;
     height: 60px;
     object-fit: contain;
+    flex-shrink: 0; 
 }
 
 .school-info {
@@ -134,34 +143,11 @@ body {
 }
 
 .education-date {
-    margin-left: auto;
+    margin-left: auto; 
     font-weight: 600;
     color: #888;
     white-space: nowrap;
     font-size: 0.9rem;
-}
-
-@media (max-width: 600px) {
-    .container {
-        margin: 0;
-        border-radius: 0;
-        padding: 20px;
-    }
-    
-    .site-nav {
-        flex-wrap: wrap;
-    }
-
-    .education-item {
-        flex-wrap: wrap; 
-    }
-
-    .education-date {
-        margin-left: 80px;
-        margin-top: -10px;
-        width: 100%;
-        font-size: 0.85rem;
-    }
 }
 
 .skill-category {
@@ -185,7 +171,7 @@ body {
     background-color: #f0f0f0; 
     border: 2px solid #333; 
     border-radius: 6px;
-    padding: 10px 20px;
+    padding: 8px 16px; 
     font-size: 1rem;
     font-weight: 500;
     color: #333;
@@ -199,4 +185,58 @@ body {
     background-color: #333;
     color: #fff;
     border-color: #333;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 0;
+        border-radius: 0;
+        padding: 25px 15px; 
+        min-height: 100vh;
+    }
+    
+    .header h1 {
+        font-size: 2rem; 
+    }
+
+    .site-nav {
+        gap: 8px;
+        justify-content: stretch;
+    }
+
+    .nav-link {
+        flex: 1 1 45%; 
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 10px 5px;
+        border: 1px solid #eee; 
+    }
+
+    .education-item {
+        flex-wrap: wrap; 
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .uni-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .school-info {
+        width: calc(100% - 70px); 
+    }
+
+    .education-date {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 5px;
+        font-size: 0.85rem;
+        color: #666;
+        padding-left: 0; 
+    }
+    
+    .skill-box {
+        font-size: 0.9rem; 
+    }
 }
