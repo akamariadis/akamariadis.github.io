@@ -1,104 +1,122 @@
+:root {
+    /* CSS Variables make updating your theme incredibly easy */
+    --primary-color: #2563eb;       /* A more modern, vibrant blue */
+    --primary-hover: #1d4ed8;
+    --text-main: #1f2937;           /* Softer than pure black for easier reading */
+    --text-muted: #6b7280;
+    --bg-page: #f3f4f6;
+    --bg-card: rgba(255, 255, 255, 0.97);
+    --border-color: #e5e7eb;
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Times New Roman', Times, serif;
+    /* Swapped Times New Roman for a clean, modern system font stack */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
-    background-color: #f4f4f4; 
+    color: var(--text-main);
+    background-color: var(--bg-page); 
     background-image: url('background.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    line-height: 1.6; /* Improves overall readability */
 }
 
 .container {
     max-width: 900px;
-    margin: 40px auto;
+    margin: 60px auto; /* Slightly more breathing room on desktop */
     padding: 40px;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(5px);
+    background-color: var(--bg-card);
+    border-radius: 16px; /* Slightly rounder for a modern feel */
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(8px);
 }
 
 .header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .header h1 {
     margin: 0;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #222;
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: #111827;
     line-height: 1.2;
+    letter-spacing: -0.02em; /* Tighter letter spacing on big headers looks premium */
 }
 
 .tagline {
-    margin: 10px 0 20px;
-    color: #666;
-    font-size: 1.1rem;
+    margin: 12px 0 24px;
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    font-weight: 400;
 }
 
 .socials {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 24px;
     margin-top: 15px;
 }
 
 .social-link {
-    color: #555;
+    color: var(--text-muted);
     font-size: 1.5rem;
     transition: all 0.2s ease;
     padding: 5px; 
 }
 
 .social-link:hover {
-    color: #007bff;
-    transform: scale(1.1);
+    color: var(--primary-color);
+    transform: translateY(-3px); /* Upward float is more professional than scaling up */
 }
 
 .site-nav {
     display: flex;
     justify-content: center;
     flex-wrap: wrap; 
-    gap: 10px; 
+    gap: 12px; 
     margin-bottom: 40px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
 }
 
 .nav-link {
     text-decoration: none;
-    color: #555;
+    color: var(--text-muted);
     font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 6px;
-    transition: background-color 0.2s;
+    padding: 8px 18px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
     white-space: nowrap; 
 }
 
 .nav-link:hover {
-    background-color: #f0f0f0;
-    color: #000;
+    background-color: #f3f4f6;
+    color: var(--text-main);
 }
 
 .nav-link.active {
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: white;
 }
 
 .content h2 {
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-    font-size: 1.8rem;
-    color: #222;
+    /* Replaced the bottom border with a subtle left accent for a cleaner look */
+    border-left: 4px solid var(--primary-color);
+    padding-left: 12px;
+    margin-bottom: 30px;
+    font-size: 1.75rem;
+    color: #111827;
 }
 
 .education-item {
@@ -106,21 +124,22 @@ body {
     align-items: center; 
     gap: 20px;
     background-color: #ffffff;
-    border: 1px solid #eaeaea;
-    padding: 20px;
+    border: 1px solid var(--border-color);
+    padding: 24px;
     margin-bottom: 20px;
-    border-radius: 8px;
+    border-radius: 12px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .education-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    border-color: #d1d5db;
 }
 
 .uni-logo {
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     object-fit: contain;
     flex-shrink: 0; 
 }
@@ -132,32 +151,35 @@ body {
 
 .school-info h3 {
     margin: 0;
-    font-size: 1.2rem;
-    color: #222;
+    font-size: 1.25rem;
+    color: var(--text-main);
 }
 
 .degree {
-    margin: 5px 0 0 0;
-    font-size: 0.95rem;
-    color: #666;
+    margin: 6px 0 0 0;
+    font-size: 1rem;
+    color: var(--text-muted);
 }
 
 .education-date {
     margin-left: auto; 
-    font-weight: 600;
-    color: #888;
+    font-weight: 500;
+    color: var(--text-muted);
     white-space: nowrap;
     font-size: 0.9rem;
+    background-color: #f3f4f6; /* Added a subtle background pill to dates */
+    padding: 4px 10px;
+    border-radius: 6px;
 }
 
 .skill-category {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .skill-category h3 {
     font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 15px;
+    color: var(--text-main);
+    margin-bottom: 16px;
     font-weight: 600;
 }
 
@@ -168,35 +190,37 @@ body {
 }
 
 .skill-box {
-    background-color: #f0f0f0; 
-    border: 2px solid #333; 
-    border-radius: 6px;
-    padding: 8px 16px; 
-    font-size: 1rem;
+    background-color: #ffffff; 
+    border: 1px solid var(--border-color); /* Softened from the heavy 2px dark border */
+    border-radius: 20px; /* Switched to a pill shape, which is trending in modern UI */
+    padding: 8px 18px; 
+    font-size: 0.95rem;
     font-weight: 500;
-    color: #333;
+    color: var(--text-main);
     display: inline-flex;
     align-items: center;
     gap: 8px;
     transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
 .skill-box:hover {
-    background-color: #333;
-    color: #fff;
-    border-color: #333;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background-color: #eff6ff; /* Very subtle blue tint on hover */
+    transform: translateY(-2px);
 }
 
 @media (max-width: 600px) {
     .container {
         margin: 0;
         border-radius: 0;
-        padding: 25px 15px; 
+        padding: 30px 20px; 
         min-height: 100vh;
     }
     
     .header h1 {
-        font-size: 2rem; 
+        font-size: 2.2rem; 
     }
 
     .site-nav {
@@ -205,38 +229,32 @@ body {
     }
 
     .nav-link {
-        flex: 1 1 45%; 
+        flex: 1 1 calc(50% - 8px); /* Fixed the 45% math for better wrapping */
         text-align: center;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         padding: 10px 5px;
-        border: 1px solid #eee; 
+        border: 1px solid var(--border-color); 
     }
 
     .education-item {
         flex-wrap: wrap; 
-        padding: 15px;
+        padding: 20px;
         gap: 15px;
     }
     
     .uni-logo {
-        width: 50px;
-        height: 50px;
+        width: 48px;
+        height: 48px;
     }
 
     .school-info {
-        width: calc(100% - 70px); 
+        width: calc(100% - 65px); 
     }
 
     .education-date {
         margin-left: 0;
-        width: 100%;
-        margin-top: 5px;
+        width: fit-content;
+        margin-top: 10px;
         font-size: 0.85rem;
-        color: #666;
-        padding-left: 0; 
-    }
-    
-    .skill-box {
-        font-size: 0.9rem; 
     }
 }
